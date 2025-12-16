@@ -24,6 +24,7 @@
   "private": true,
   "packageManager": "npm@10.9.3",
   "dependencies": {
+    "@angular/animations": "^21.0.3",
     "@angular/common": "^21.0.0",
     "@angular/compiler": "^21.0.0",
     "@angular/core": "^21.0.0",
@@ -32,11 +33,19 @@
     "@angular/platform-server": "^21.0.0",
     "@angular/router": "^21.0.0",
     "@angular/ssr": "^21.0.2",
+    "@swimlane/ngx-charts": "^23.1.0",
+    "@swimlane/ngx-graph": "^11.0.0",
+    "@types/d3": "^7.4.3",
+    "d3": "^7.9.0",
+    "d3-scale": "^4.0.2",
+    "d3-selection": "^3.0.0",
+    "d3-shape": "^3.2.0",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^21.0.2",
     "@angular/build": "^21.0.2",
     "@angular/cli": "^21.0.2",
     "@angular/compiler-cli": "^21.0.0",

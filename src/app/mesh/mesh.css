@@ -1,0 +1,54 @@
+:host {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f8f9fa;
+    overflow: hidden;
+}
+
+.graph-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: #fafafa;
+}
+
+.node-dot {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+.node-dot:hover {
+    transform: scale(2.5);
+    fill: #d4a574 !important;
+    filter: drop-shadow(0px 0px 15px rgba(212, 165, 116, 1));
+}
+
+.link-line {
+    pointer-events: none;
+}
+
+.node-label {
+    user-select: none;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+.node-group {
+    cursor: pointer;
+}
+
+.node-group:hover .node-dot {
+    transform: scale(2.5);
+    fill: #d4a574 !important;
+    filter: drop-shadow(0px 0px 15px rgba(212, 165, 50, 1));
+}
+
+.node-group:hover .node-label {
+    transform: scale(2.5);
+    font-weight: 700;
+}
