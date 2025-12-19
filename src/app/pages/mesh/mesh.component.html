@@ -1,0 +1,70 @@
+<svg [attr.width]="width" [attr.height]="height" class="graph-svg">
+  <!-- Lines first (so they appear behind nodes) -->
+  <g class="links">
+    <path 
+      *ngFor="let link of links"
+      [attr.d]="getLinePath(link)"
+      class="link-line"
+      stroke="#d0d0d0"
+      stroke-width="1"
+      fill="none"
+      vector-effect="non-scaling-stroke">
+    </path>
+  </g>
+
+  <!-- Nodes on top -->
+  <g class="nodes">
+    <g *ngFor="let node of nodes" class="node-group">
+      <!-- Regular dot nodes -->
+      <circle 
+        *ngIf="node.type === 'dot'"
+        [class.node-dot]="node.type === 'dot'"
+        [attr.cx]="node.x"
+        [attr.cy]="node.y"
+        [attr.r]="node.size"
+        [attr.fill]="node.color"
+        stroke="white"
+        [attr.stroke-width]="1">
+      </circle>
+      
+      <!-- Main node -->
+      <circle 
+        *ngIf="node.type === 'main'"
+        [class.node-main]="node.type === 'main'"
+        [attr.cx]="node.x"
+        [attr.cy]="node.y"
+        [attr.r]="node.size"
+        [attr.fill]="node.color"
+        [attr.stroke]="'#cccccc'"
+        [attr.stroke-width]="1">
+      </circle>
+      
+      <!-- Dot node text -->
+      <text 
+        *ngIf="node.type === 'dot'"
+        [attr.x]="node.x"
+        [attr.y]="node.y"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        class="node-label"
+        style="font-size: 7px; font-weight: 600; fill: #333; pointer-events: none;">
+        {{ node.label }}
+      </text>
+    </g>
+
+    <!-- Main node text -->
+    <g *ngFor="let node of nodes">
+      <foreignObject 
+        *ngIf="node.type === 'main'"
+        [attr.x]="node.x - 60"
+        [attr.y]="node.y - 30"
+        width="120"
+        height="60">
+        <div xmlns="http://www.w3.org/1999/xhtml" 
+             style="font-size: 9px; font-weight: bold; text-align: center; color: #333; display: flex; align-items: center; justify-content: center; height: 100%; padding: 8px;">
+          {{ node.label }}
+        </div>
+      </foreignObject>
+    </g>
+  </g>
+</svg>
