@@ -26,41 +26,65 @@ section {
 /* logo de t3sti */
 .hero-logo-large {
     position: absolute;
-    top: 20%;
-    left: 10%;
+    top: -25%;
+    left: -5%;
 }
 
 
 .shield-logo-hero-placeholder {
-    width: 120px;
-    height: 200px;
-    border: 3px solid #d4a574;
-    background: rgba(212, 165, 116, 0.2);
+    width: 400px;
+    height: 800px;      
 }
 
+.logo-giro {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: rotate(-90deg) scale(0.9);
+}
 
 .hero-bottom-right {
     position: absolute;
-    bottom: 5%;
-    right: 5%;
+    bottom: 10%;
+    right: 10%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column;    
+    font-size: 1.5rem;
 }
 
-.strategy-logo-placeholder {
-    width: 60px;
-    height: 80px;
-    border: 1px solid #d4a574;
-    margin-bottom: 0.5rem;
+/* Boton de centro de pensamiento */
+.btn-centro-container {
+    position: absolute;
+    top: 2rem;
+    right: 6rem;
+    z-index: 100;
+}
+
+.btn-centro {
+    display: inline-block;
+    padding: 1rem 1rem;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;    
+}
+.btn-centro:hover {
+    background-color: #ffcc00;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .strategy-text {
     text-align: center;
-    color: #d4a574;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 1px;
+    color: #828282;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+}
+
+.complex {
+    color: #D9D9D9;
 }
 
 /* IDENTITY SECTION */

@@ -15,16 +15,16 @@
   justify-content: center;   
   align-items: center;
   padding: 40px 40px; 
-  z-index: 100;   /* encima del hero */
+  z-index: 100;   /* encima del hero */ 
 }
 
 .menu {
   display: flex;
-  gap: 100px;  
+  gap: 70px;    
 }
 
 .navbar button {
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: 300;
   cursor: pointer;
   transition: color 0.2s ease, text-shadow 0.2s ease;
@@ -51,7 +51,7 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-starct;
-  padding: 3rem 10%;
+  padding: 2rem 6%;
   gap: 3rem;
 }
 
@@ -66,53 +66,54 @@ footer {
 .footer-branding {
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center; 
+    transform: scale(1.2);   
 }
 
 /* Logo t3sti */
 .footer-logo {
-    height: 400px;
+    height: 250px;
     width: auto;
+    padding: 0 0 0 80px;
 }
 
 /* columna whatsapp e instagram*/
 .footer-socials {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
-    margin-top: -2rem;
+    gap: 1rem;   
 }
 
 .social-btn {
   display: flex;              /* activa layout horizontal */
   align-items: center;        /* centra verticalmente */
   justify-content: center;    /* centra el contenido */
-  gap: 2rem;                /* espacio entre ícono y texto */
+  gap: 1rem;                /* espacio entre ícono y texto */
   text-align: center; 
   background: #fff;  
 }
 
 .sn-icon {
-  width: 60px;   /* tamaño del ícono */
+  width: 50px;   /* tamaño del ícono */
   height: auto;
   flex-shrink: 0;  /* evita que el ícono se reduzca */
 }
 
 .red-contact {
-  font-size: 45px;
+  font-size: 20px;
   color: #A48859;
 }
 
 .footer-socials .social-btn {
     flex: 1;
     text-align: center;
-    padding: 0.6rem 1rem;  
+    padding: 0.4rem 1rem;  
     border-radius: 50px;
     background: #fff;     
 }
 
 .contact-icon {
-    width: 70px;
+    width: 50px;
     height: auto;
     flex-shrink: 0;  
 }
@@ -131,7 +132,7 @@ footer {
 .footer-right {
     display: flex;
     flex-direction: column;   
-    gap: 4rem;
+    gap: 1.1rem;
     padding-top: 4rem;
 }
 
@@ -139,14 +140,14 @@ footer {
 .contact-item {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     height: 80px;
     width: auto;
     flex-shrink: 0;        
 }
 
 .info-ubi {
-    font-size: 40px;
+    font-size: 30px;
     line-height: 1.4;
     font-weight: 500;
 }
@@ -159,10 +160,10 @@ footer {
 .footer-keywords {
     display: flex;
     justify-content: center;
-    gap: 6rem;  
+    gap: 3rem;  
     text-align: center;
     padding: 3rem 0 0;
-    font-size: 60px;
+    font-size: 30px;
     font-weight: 400;
     opacity: 40%;
     font-weight: 300;
@@ -170,8 +171,8 @@ footer {
 
    .dot {
   display: inline-block;
-  width: 0.6em;
-  height: 0.6em;
+  width: 0.4em;
+  height: 0.4em;
   border-radius: 50%;
   background-color: currentColor;
   vertical-align: middle;
@@ -186,6 +187,6 @@ footer {
     color: white;
     text-align: center;
     padding: 0.5rem 0;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 300;
    }
