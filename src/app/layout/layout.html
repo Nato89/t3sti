@@ -1,0 +1,59 @@
+
+<nav class="navbar">
+    <div class="menu">
+        <button (click)="scrollTo('hero')"><h1>Sobre Nosotros</h1></button>
+        <button (click)="scrollTo('team')"><h1>Nuestro Equipo</h1></button>
+        <button (click)="scrollTo('area')"><h1>Áreas de Práctica</h1></button>    
+    </div>
+</nav>
+
+<!-- Conector de la landing -->
+<router-outlet></router-outlet>
+
+<!-- FOOTER SECTION -->
+<footer>
+  <div class="footer-main">
+      
+      <!-- Left Column: Branding & Socials -->
+      <div class="footer-left">
+          <div class="footer-branding">
+              <img src="assets/images/t3sti_3.svg" alt="t3sti-centro de pensamiento" class="footer-logo" />
+          </div>
+          <div class="footer-socials">
+              <button class="social-btn">
+                  <img src="assets/images/ig_icon.svg" alt="instagram icono" class="sn-icon">  
+                  <span class="red-contact">@Instagram</span>
+              </button>
+              <button class="social-btn">
+                  <img src="assets/images/wa_icon.svg" alt="whatsapp icono" class="sn-icon">  
+                  <span class="red-contact">+57 324 5567089</span>
+              </button>
+          </div>
+      </div>
+       
+      <div class="divider-line"></div>
+
+      <!-- Right Column: Contact Info -->
+      <div class="footer-right">
+            <div class="contact-item">
+                <img src="assets/images/ubi-icon.svg" alt="icono de ubicación" class="contact-icon">
+                <p class="info-ubi">Calle 11A N°31A -89 Oficina 601,<br><span class="bosko">Edificio BOSKO, El Poblado</span></p>
+            </div>
+            <div class="contact-item">
+                <img src="assets/images/phone-icon.svg" alt="icono de teléfono" class="contact-icon">
+                <p class="info-ubi">+57 604 604 45 95</p>
+            </div>
+            <div class="contact-item">
+                <img src="assets/images/mail-icon.svg" alt="icono de correo" class="contact-icon">
+                <p class="info-ubi">correo@correo.com</p>
+            </div>
+      </div>
+           
+  </div>
+  <div class="footer-keywords">
+      <span>Gerencia</span><span class="dot"></span> <span>Complejidad</span><span class="dot"></span><span>Cuántica</span>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright © 2025 by GC Hub</p>
+  </div>
+</footer>

@@ -1,0 +1,18 @@
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'app-layout',
+  standalone: true,
+  imports: [RouterOutlet],
+  templateUrl: './layout.html',
+  styleUrls: ['./layout.css']
+})
+export class Layout {
+  scrollTo(id: string) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+}

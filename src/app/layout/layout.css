@@ -1,0 +1,191 @@
+/* Layout general */
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  
+}
+
+/* Header (navbar) */
+.navbar {
+  position: absolute;   /* se superpone dentro del hero */
+  color: white;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;   
+  align-items: center;
+  padding: 40px 40px; 
+  z-index: 100;   /* encima del hero */
+}
+
+.menu {
+  display: flex;
+  gap: 100px;  
+}
+
+.navbar button {
+  font-size: 3rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+  }
+
+  .navbar button:hover {
+    color: #ffcc00;  /* color amarillo al pasar el mouse */
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.6); /* efecto de resplandor */
+    transform: scale(1.1); /* ligero aumento de tamaño de los botones*/
+  }
+
+
+/* FOOTER SECTION */
+footer {
+    margin-top: auto;
+    background: #E6E6E6;
+    /* Gray background */
+    color: #333;
+   }
+
+/* Footer main: dos columnas */
+.footer-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-starct;
+  padding: 3rem 10%;
+  gap: 3rem;
+}
+
+/* Columna izquierda y columna derecha */
+.footer-left,
+.footer-right {
+    flex: 1; /* cada columna ocupa el 50% de espacio */
+    max-width: 50%;
+}
+
+/* caja de logo t3sti */
+.footer-branding {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+/* Logo t3sti */
+.footer-logo {
+    height: 400px;
+    width: auto;
+}
+
+/* columna whatsapp e instagram*/
+.footer-socials {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: -2rem;
+}
+
+.social-btn {
+  display: flex;              /* activa layout horizontal */
+  align-items: center;        /* centra verticalmente */
+  justify-content: center;    /* centra el contenido */
+  gap: 2rem;                /* espacio entre ícono y texto */
+  text-align: center; 
+  background: #fff;  
+}
+
+.sn-icon {
+  width: 60px;   /* tamaño del ícono */
+  height: auto;
+  flex-shrink: 0;  /* evita que el ícono se reduzca */
+}
+
+.red-contact {
+  font-size: 45px;
+  color: #A48859;
+}
+
+.footer-socials .social-btn {
+    flex: 1;
+    text-align: center;
+    padding: 0.6rem 1rem;  
+    border-radius: 50px;
+    background: #fff;     
+}
+
+.contact-icon {
+    width: 70px;
+    height: auto;
+    flex-shrink: 0;  
+}
+
+
+/* Linea divisora */
+.divider-line {
+    width: 6px;  
+    border-radius: 3px; 
+    background: #ccc;
+    margin: 0 4rem;
+    align-self: stretch;
+}
+
+/* Columna derecha del footer */
+.footer-right {
+    display: flex;
+    flex-direction: column;   
+    gap: 4rem;
+    padding-top: 4rem;
+}
+
+/* items de localizacion, mail y contacto */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    height: 80px;
+    width: auto;
+    flex-shrink: 0;        
+}
+
+.info-ubi {
+    font-size: 40px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.bosko {
+    font-weight: 300;
+}
+
+/* Footer pre-bottom */
+.footer-keywords {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;  
+    text-align: center;
+    padding: 3rem 0 0;
+    font-size: 60px;
+    font-weight: 400;
+    opacity: 40%;
+    font-weight: 300;
+   }
+
+   .dot {
+  display: inline-block;
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  background-color: currentColor;
+  vertical-align: middle;
+  line-height: 0;              /* evita que aporte altura de línea */
+  transform: translateY(0.5em);/* microajuste visual hacia abajo */
+  opacity: 20%;          /* menor opacidad para el punto */
+  }
+
+/* Footer bottom */
+.footer-bottom {
+    background: #454545;
+    color: white;
+    text-align: center;
+    padding: 0.5rem 0;
+    font-size: 50px;
+    font-weight: 300;
+   }

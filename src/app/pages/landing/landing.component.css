@@ -1,38 +1,8 @@
 :host {
     display: block;
-    font-family: 'Inter', sans-serif;
+    font-family: 'montserrat', sans-serif;
     color: white;
-    background-color: #0a0e17;
-}
-
-
-
-.logo span {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 2px;
-}
-
-.menu {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-
-.menu button {
-    background: none;
-    border: none;
-    color: #a0a0a0;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: color 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.menu button:hover {
-    color: #fff;
+    background-color: #0D1821;
 }
 
 /* SECTIONS COMMON */
@@ -45,44 +15,21 @@ section {
     align-items: center;
 }
 
-.gold-text {
-    color: #d4a574;
+#services {
+  background-image: url('/assets/images/astronauta.png');
+  background-size: cover;       /* hace que la imagen cubra todo el área */
+  background-position: center;  /* centra la imagen */
+  background-repeat: no-repeat; /* evita que se repita */
+  height: 200vh;                /* ocupa toda la altura de la pantalla */
 }
 
-.bg-placeholder {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: #1a1f2e;
-    overflow: hidden;
-}
-
-.bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.6;
-}
-
-/* HERO SECTION UPDATED */
-.hero-overlays {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    /* Let clicks pass through */
-}
-
+/* logo de t3sti */
 .hero-logo-large {
     position: absolute;
     top: 20%;
     left: 10%;
 }
+
 
 .shield-logo-hero-placeholder {
     width: 120px;
@@ -91,21 +38,6 @@ section {
     background: rgba(212, 165, 116, 0.2);
 }
 
-.hero-bottom-left {
-    position: absolute;
-    bottom: 15%;
-    left: 10%;
-}
-
-.pill-text {
-    background: white;
-    color: #d4a574;
-    padding: 0.5rem 2rem;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: 300;
-    border: 2px solid #d4a574;
-}
 
 .hero-bottom-right {
     position: absolute;
@@ -132,11 +64,8 @@ section {
 }
 
 /* IDENTITY SECTION */
-.identity-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
+#identity {
+  
 }
 
 .big-logo-text {
@@ -240,23 +169,7 @@ section {
     opacity: 1;
 }
 
-.btn-gold {
-    background: #d4a574;
-    border: none;
-    padding: 0.5rem 1rem;
-    color: white;
-    border-radius: 20px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
 /* AREAS SECTION */
-.areas-section {
-    background: #0d0d0d;
-    justify-content: flex-start;
-    padding-top: 0;
-}
-
 .areas-header {
     width: 100%;
     background: #e8e8e8;
@@ -297,42 +210,10 @@ section {
     gap: 3rem;
 }
 
-.arrow-btn {
-    background: none;
-    border: none;
-    color: #333;
-    font-size: 3rem;
-    cursor: pointer;
-    transition: color 0.3s;
-}
+
 
 .arrow-btn:hover {
     color: #fff;
-}
-
-.area-item {
-    text-align: center;
-}
-
-.area-item h3 {
-    font-size: 2rem;
-    font-weight: 300;
-    line-height: 1.4;
-    color: #fff;
-}
-
-/* SERVICES SECTION */
-.services-section {
-    overflow: hidden;
-}
-
-.bubbles-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .bubble {
@@ -392,133 +273,7 @@ section {
     right: 20%;
 }
 
-/* FOOTER SECTION */
-footer {
-    background: #e6e6e6;
-    /* Gray background */
-    color: #333;
-    font-size: 0.9rem;
-}
 
-.footer-main {
-    padding: 3rem 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 2rem;
-}
-
-.footer-left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-}
-
-.footer-branding {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.footer-logo-text {
-    font-size: 3rem;
-    font-family: serif;
-    color: #cdaa7d;
-}
-
-.footer-logo-icon {
-    width: 80px;
-    height: 50px;
-    background: #cdaa7d;
-    /* Placeholder for the complex logo shape */
-    /* mask: url('data:image/svg+xml;utf8,<svg ...></svg>'); */
-    /* Ideally use SVG */
-    /* -webkit-mask: url('data:image/svg+xml;utf8,<svg ...></svg>'); */
-}
-
-.footer-tagline {
-    font-size: 1rem;
-    color: #444;
-    margin-left: 10px;
-}
-
-.footer-socials {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-btn {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 0.5rem 1.5rem;
-    border-radius: 20px;
-    color: #cdaa7d;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-}
-
-.divider-line {
-    width: 1px;
-    height: 150px;
-    background: #ccc;
-    margin: 0 4rem;
-}
-
-.footer-right {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.icon-circle {
-    width: 32px;
-    height: 32px;
-    background: #444;
-    border-radius: 50%;
-}
-
-.contact-item p {
-    margin: 0;
-    color: #444;
-    font-size: 0.95rem;
-}
-
-.footer-keywords {
-    width: 100%;
-    text-align: center;
-    font-size: 1.2rem;
-    color: #888;
-    font-weight: 600;
-    margin-top: 1rem;
-}
-
-.footer-keywords span {
-    color: #888;
-}
-
-.footer-bottom {
-    background: #333;
-    color: #eee;
-    text-align: center;
-    padding: 1rem;
-} 
 
 .hero-section{
     background-image: url('/assets/images/monje_fondo.gif');
