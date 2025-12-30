@@ -11,6 +11,13 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent {
+
+  // Inicialmente el logo se muestra, pero cuando se pasa el mouse por el lapiz, se oculta
+  mostrarLogo: boolean = true;
+
+  // Variable para guardar el contenido dinámico (mision, vision y valores)
+  // Si es null, no se muestra nada, si tiene datos, se renderiza en el HTML
+  contenidoActual: { titulo: string; texto: string } | null = null; 
   
   scrollTo(id: string) {
     const element = document.getElementById(id);
@@ -18,5 +25,24 @@ export class LandingComponent {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
+  // Método para activar contenido dinámico, recibe el tipo de zona y oculta el logo y carga el texto correspondiente
+  activarContenido(tipo:string) {
+    this.mostrarLogo = false;
+
+    if (tipo === 'mision') {
+      this.contenidoActual = { titulo: 'Misión', texto: 'Aportar conocimiento estratégico desde la complejidad y la gerencia cuántica para anticipar, comprender y transformar sistemas sociales, políticos y económicos.' };
+    } else if (tipo === 'valores') {
+      this.contenidoActual = { titulo: 'Valores', texto: '* Interdisciplinaridad\n* Innovación\n* Ética\n* Pensamiento crítico\n* Prospectiva' };
+    } else if (tipo === 'vision') {
+      this.contenidoActual = { titulo: 'Visión', texto: 'Ser referentes iberoamericano en la generación de conocimiento innovador para gobiernos, empresas y sociedad civil' };
+    }
+  }
+    
+  // Método para desactivar el contenido dinámico y volver a mostrar el logo
+  restaurar() {
+    this.mostrarLogo = true;
+    this.contenidoActual = null;
+  } 
 
 }

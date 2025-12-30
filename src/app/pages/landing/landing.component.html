@@ -24,51 +24,107 @@
   </section>
 
   <!-- IDENTITY SECTION -->
-  <section id="identity" class="identity-section">
-      <div></div>
-  </section>
+<section id="identity" class="identity-section">
+    <div class="identity-box">
+
+        <!-- Logo y contenedor dinámico -->
+        <!-- Columna izquierda -->
+        <div class="identity-izq">
+            <!-- Logo t3sti -->
+            @if (mostrarLogo) {
+                <div id="logo-t3sti" class="logo-t3sti-clase">
+                    <img src="assets/images/testi_6.png" alt="Testi logo">
+                </div>
+            }
+
+            <!-- Contenedor de contenido dinámico -->
+            @if (contenidoActual) {
+                <div id="ctn-identity" class="ctn-identity-clase">
+                    <!-- Aquí se inyecta la misión, valores y visión -->
+                    <h2>{{ contenidoActual.titulo }}</h2>
+                    <p>{{ contenidoActual.texto }}</p>
+                </div>
+            }
+        </div>
+
+        <!-- Lápiz dividido en zonas -->
+        <!-- Columna derecha -->
+        <div class="identity-der">
+            <div class="lapiz-container">
+                <!-- Imagen base opaca -->
+                <img src="assets/images/lapiz-partes.png" alt="Lápiz testi opaco" class="lapiz-base">
+
+                <!-- Zonas interactivas -->
+                <!-- Corona - zona interactiva -->
+                <div class="corona"
+                    role="button" aria-label="Corona del Lápiz"
+                    (mouseenter)="activarContenido('mision')"
+                    (mouseleave)="restaurar()">
+                    <img src="assets/images/corona.png" alt="Corona del Lápiz" class="highlights">
+                </div>
+
+                <!-- Líneas - zona interactiva -->
+                <div class="lineas"
+                    role="button" aria-label="Líneas del Lápiz"
+                    (mouseenter)="activarContenido('valores')"
+                    (mouseleave)="restaurar()">
+                  <img src="assets/images/lineas.png" alt="Líneas del Lápiz" class="highlights">
+                </div>
+
+                <!-- Punta - zona interactiva -->
+                <div class="punta"
+                    role="button" aria-label="Punta del Lápiz"
+                    (mouseenter)="activarContenido('vision')"
+                    (mouseleave)="restaurar()">
+                  <img src="assets/images/punta.png" alt="Punta del Lápiz" class="highlights">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
 
   <!-- TEAM SECTION -->
   <section id="team" class="team-section">
-    <h2 class="section-title">¿Quiénes somos?</h2>
-    <div class="team-grid">
-      <!-- Member 1 -->
-      <div class="team-member">
-        <div class="member-photo-circle">
-           <!-- Placeholder for image -->
+      <h2 class="section-title">¿Quiénes somos?</h2>
+      <div class="team-grid">
+        <!-- Member 1 -->
+        <div class="team-member">
+          <div class="member-photo-circle">
+            <!-- Placeholder for image -->
+          </div>
+          <div class="member-info-overlay">
+            <p>Posdoctorado como Visiting Scholar...</p>
+            <button class="btn-gold">Más información</button>
+          </div>
+          <h3>VIRGINIA CONFIANTINI</h3>
+          <p>Ph.D. en Filosofía</p>
         </div>
-        <div class="member-info-overlay">
-          <p>Posdoctorado como Visiting Scholar...</p>
-          <button class="btn-gold">Más información</button>
+        <!-- Member 2 -->
+        <div class="team-member">
+          <div class="member-photo-circle">
+            <!-- Placeholder for image -->
+          </div>
+          <div class="member-info-overlay">
+            <p>Posdoctorado como Visiting Scholar...</p>
+            <button class="btn-gold">Más información</button>
+          </div>
+          <h3>CARLOS EDUARDO MALDONADO</h3>
+          <p>Ph.D. en Filosofía</p>
         </div>
-        <h3>VIRGINIA CONFIANTINI</h3>
-        <p>Ph.D. en Filosofía</p>
+        <!-- Member 3 -->
+        <div class="team-member">
+          <div class="member-photo-circle">
+            <!-- Placeholder for image -->
+          </div>
+          <div class="member-info-overlay">
+            <p>Posdoctorado como Visiting Scholar...</p>
+            <button class="btn-gold">Más información</button>
+          </div>
+          <h3>FELIPE ROJAS TORO</h3>
+          <p>Ph.D. en Filosofía</p>
+        </div>
       </div>
-      <!-- Member 2 -->
-      <div class="team-member">
-        <div class="member-photo-circle">
-           <!-- Placeholder for image -->
-        </div>
-        <div class="member-info-overlay">
-          <p>Posdoctorado como Visiting Scholar...</p>
-          <button class="btn-gold">Más información</button>
-        </div>
-        <h3>CARLOS EDUARDO MALDONADO</h3>
-        <p>Ph.D. en Filosofía</p>
-      </div>
-      <!-- Member 3 -->
-      <div class="team-member">
-        <div class="member-photo-circle">
-           <!-- Placeholder for image -->
-        </div>
-        <div class="member-info-overlay">
-          <p>Posdoctorado como Visiting Scholar...</p>
-          <button class="btn-gold">Más información</button>
-        </div>
-        <h3>FELIPE ROJAS TORO</h3>
-        <p>Ph.D. en Filosofía</p>
-      </div>
-    </div>
   </section>
 
   <!-- AREAS SECTION -->
