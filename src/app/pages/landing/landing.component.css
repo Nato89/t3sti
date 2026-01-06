@@ -33,7 +33,7 @@ section {
 
 .shield-logo-hero-placeholder {
     width: 400px;
-    height: 800px;      
+    height: 800px;
 }
 
 .logo-giro {
@@ -48,7 +48,7 @@ section {
     bottom: 10%;
     right: 10%;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     font-size: 1.5rem;
 }
 
@@ -67,7 +67,7 @@ section {
     color: #000000;
     font-weight: bold;
     border: none;
-    border-radius: 10px;    
+    border-radius: 10px;
 }
 .btn-centro:hover {
     background-color: #ffcc00;
@@ -90,15 +90,15 @@ section {
 /* IDENTITY SECTION */
 /* Caja contenedora */
 .identity-box {
-    display: flex;   
+    display: flex;
     align-items: center;
     width: 100%;
-    max-width: 800px;  
+    max-width: 800px;
 }
 
 /* Identity izq */
 .identity-izq {
-   flex: 0 0 80%;  
+   flex: 0 0 80%;
 }
 
 /* Bloque contenido dinámico */
@@ -114,7 +114,7 @@ section {
 
 /* Título */
 .ctn-identity-clase h2 {
-    font-size: 3rem;    
+    font-size: 3rem;
     font-weight: 400;
     color: #ffffff;
     margin: 0;
@@ -144,7 +144,7 @@ section {
 .logo-t3sti-clase img {
   max-width: 100%; /* ajusta el tamaño del logo */
   height: auto;
-  transition: opacity 0.4s ease;  
+  transition: opacity 0.4s ease;
 }
 
 
@@ -227,12 +227,12 @@ section {
 
 .section-title {
     font-size: 3rem;
-    color: #d4a574;
+    color: #A48859;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
     font-weight: 700;
     text-decoration: underline;
-    text-decoration-color: #d4a574;
+    text-decoration-color: #A48859;
     text-underline-offset: 10px;
 }
 
@@ -251,13 +251,26 @@ section {
 
 .member-photo-circle {
     width: 250px;
-    height: 250px;
+    height: auto;
     border-radius: 50%;
     background-color: #ddd;
     margin: 0 auto 2rem;
     overflow: hidden;
     border: 5px solid white;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-gold {
+  border: 2px solid #A48859;
+  border-radius: 30px;
+  background: #A48859;
+  padding: 3px;
+  margin-top: 3rem;
+}
+
+button,
+.btn-gold {
+    cursor: pointer;
 }
 
 .team-member h3 {
@@ -268,9 +281,13 @@ section {
 }
 
 .team-member p {
-    font-size: 0.9rem;
-    color: #666;
-    font-family: serif;
+    font-size: 1rem;
+    color: #828282;
+    font-family: "Averia Serif Libre", serif;
+}
+
+.member-info-overlay p {
+    margin-top: rem;
 }
 
 .member-info-overlay {
@@ -278,7 +295,7 @@ section {
     top: 0;
     left: 25px;
     width: 250px;
-    height: 250px;
+    height: 244px;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.7);
     display: flex;
@@ -295,6 +312,92 @@ section {
 .member-info-overlay:hover {
     opacity: 1;
 }
+
+
+/* Recuadro info doctores */
+.modal-slide-up {
+  position: fixed;
+  height: 92vh;
+  border-radius: 20px 20px 0 0;
+  bottom: 0;
+  width: 80%;
+  background: #fff;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+  padding: 5rem;
+  z-index: 1000;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);   /* oscurece la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;         /* recuadro desde abajo */
+  z-index: 998;                  /* debajo del modal */
+}
+
+body.modal-open {
+  overflow: hidden;              /* bloquea scroll */
+}
+
+.modal-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.modal-texto {
+  flex: 1;
+  color: #333;
+}
+
+.modal-texto h2 {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.modal-texto p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
+  font-family: Averia Serif Libre, serif;
+  color: #828282;
+}
+
+.perfil-texto {
+  font-size: 1rem;
+  margin-top: 1rem;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.modal-imagen img {
+  max-width: 500px;
+  height: auto;
+}
+
+.cerrar-x {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  width: 3rem;
+}
+
+
 
 /* AREAS SECTION */
 .areas-header {
@@ -401,11 +504,27 @@ section {
 }
 
 
-
+/* Gifs como fondos de sección */
 .hero-section{
     background-image: url('/assets/images/monje_fondo.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;    
+    height: 100vh;
+}
+
+/* .team-section {
+    background-image: url('/assets/images/nodos-editable.gif');
+    background-size: cover;
+    background-position: center -250px;
+    background-repeat: no-repeat;
+    height: 100vh;
+} */
+
+.team-section {
+    background-image: url('/assets/images/nodos-fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
 }

@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [CommonModule, RouterLink, MeshComponent],  
+  imports: [CommonModule, RouterLink, MeshComponent],
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.css']
 })
@@ -17,8 +17,25 @@ export class LandingComponent {
 
   // Variable para guardar el contenido dinámico (mision, vision y valores)
   // Si es null, no se muestra nada, si tiene datos, se renderiza en el HTML
-  contenidoActual: { titulo: string; texto: string } | null = null; 
-  
+  contenidoActual: { titulo: string; texto: string } | null = null;
+
+  // Controla si el recuadro de perfil está visible
+  mostrarPerfil: boolean = false;
+  // Guarda el miembro seleccionado al dar clic en "Más información"
+miembroSeleccionado: { nombre: string; titulo: string; foto: string; descripcion: string } | null = null;
+
+verMas(miembro: any) {
+    this.miembroSeleccionado = miembro;
+    this.mostrarPerfil = true;
+  }
+
+  cerrarPerfil() {
+    this.mostrarPerfil = false;
+    this.miembroSeleccionado = null;
+  }
+
+
+
   scrollTo(id: string) {
     const element = document.getElementById(id);
     if (element) {
@@ -38,11 +55,11 @@ export class LandingComponent {
       this.contenidoActual = { titulo: 'Visión', texto: 'Ser referentes iberoamericano en la generación de conocimiento innovador para gobiernos, empresas y sociedad civil' };
     }
   }
-    
+
   // Método para desactivar el contenido dinámico y volver a mostrar el logo
   restaurar() {
     this.mostrarLogo = true;
     this.contenidoActual = null;
-  } 
+  }
 
 }
