@@ -1,0 +1,196 @@
+/* TEAM SECTION */
+.team-section {
+    background: #fff;
+    color: #000;
+    padding: 4rem 0;
+    background-image: radial-gradient(#e0e0e0 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+.section-title {
+    font-size: 3rem;
+    color: #A48859;
+    text-align: center;
+    margin-bottom: 5rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: #A48859;
+    text-underline-offset: 10px;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    text-align: center;
+    width: 300px;
+    position: relative;
+}
+
+.member-photo-circle {
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 auto 2rem;
+    overflow: hidden;
+    border: 5px solid white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-gold {
+  border: 2px solid #A48859;
+  border-radius: 30px;
+  background: #A48859;
+  padding: 3px;
+  margin-top: 3rem;
+}
+
+button,
+.btn-gold {
+    cursor: pointer;
+}
+
+.team-member h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #828282;
+    font-family: "Averia Serif Libre", serif;
+}
+
+.member-info-overlay p {
+    margin-top: rem;
+}
+
+.member-info-overlay {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    width: 250px;
+    height: 244px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+    padding: 20px;
+}
+
+.member-photo-circle:hover+.member-info-overlay,
+.member-info-overlay:hover {
+    opacity: 1;
+}
+
+
+/* Recuadro info doctores */
+.modal-slide-up {
+  position: fixed;
+  height: 92vh;
+  border-radius: 20px 20px 0 0;
+  bottom: 0;
+  width: 80%;
+  background: #fff;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+  padding: 5rem;
+  z-index: 1000;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);   /* oscurece la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;         /* recuadro desde abajo */
+  z-index: 998;                  /* debajo del modal */
+}
+
+body.modal-open {
+  overflow: hidden;              /* bloquea scroll */
+}
+
+.modal-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.modal-texto {
+  flex: 1;
+  color: #333;
+}
+
+.modal-texto h2 {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.modal-texto p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
+  font-family: Averia Serif Libre, serif;
+  color: #828282;
+}
+
+.perfil-texto {
+  font-size: 1rem;
+  margin-top: 1rem;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.modal-imagen img {
+  max-width: 500px;
+  height: auto;
+}
+
+.cerrar-x {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  width: 3rem;
+}
+
+/* .team-section {
+    background-image: url('/assets/images/nodos-editable.gif');
+    background-size: cover;
+    background-position: center -250px;
+    background-repeat: no-repeat;
+    height: 100vh;
+} */
+
+.team-section {
+    background-image: url('/assets/images/nodos-fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}

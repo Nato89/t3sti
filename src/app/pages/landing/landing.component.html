@@ -157,7 +157,7 @@
         </div>
       </div>
 
-      <!-- PERFIL DETALLADO (Se muestra soolo si mostrarPerfil es true) -->
+      <!-- PERFIL DETALLADO (Se muestra solo si mostrarPerfil es true) -->
     @if (mostrarPerfil) {
   <div class="modal-overlay" (click)="cerrarPerfil()">
     <div class="modal-slide-up" (click)="$event.stopPropagation()">
@@ -184,19 +184,43 @@
 
   <!-- AREAS SECTION -->
   <section id="areas" class="areas-section">
-    <div class="areas-header">
-      <p>Cada caso requiere <span>servicios diferentes</span></p>
-    </div>
-    <div class="areas-content">
-      <h2 class="gold-text">Áreas de práctica</h2>
-      <div class="areas-slider">
-        <button class="arrow-btn">&larr;</button>
-        <div class="area-item">
-          <h3>Sostenibilidad y<br>Modelo Financiero</h3>
-        </div>
-        <button class="arrow-btn">&rarr;</button>
+      <div class="areas-header">
+        <p>Cada caso requiere <span>servicios diferentes</span></p>
       </div>
-    </div>
+      <div class="areas-content">
+          <h2 class="gold-text">Áreas de práctica</h2>
+          <div class="carousel">
+
+              <!-- Flecha izquierda -->
+              <button class="carousel-arrow-left" (click)="prevSlide()">&#10094;</button>
+
+              <!-- Contenedor de slides -->
+              <div class="carousel-track">
+                  <div class="carousel-slide" [class.active]="currentSlide === 0">
+                      <h3>Sostenibilidad y<br>Modelo Financiero</h3>
+                  </div>
+                  <div class="carousel-slide" [class.active]="currentSlide === 1">
+                      <h3>Membresías<br>corporativas e<br>institucionales</h3>
+                  </div>
+                  <div class="carousel-slide" [class.active]="currentSlide === 2">
+                      <h3>Fondos de<br>investigación<br>internacionales</h3>
+                  </div>
+                  <div class="carousel-slide" [class.active]="currentSlide === 3">
+                      <h3>Consultoría<br>especializada</h3>
+                  </div>
+                  <div class="carousel-slide" [class.active]="currentSlide === 4">
+                      <h3>Eventos pagos y<br>certificaciones</h3>
+                  </div>
+                  <div class="carousel-slide" [class.active]="currentSlide === 5">
+                      <h3>Endowment o fondo<br>patrimonial a<br>mediano plazo</h3>
+                  </div>
+              </div>
+
+              <!-- Flecha derecha -->
+              <button class="carousel-arrow-right" (click)="nextSlide()">&#10095;</button>
+
+          </div>
+      </div>
   </section>
 
 
@@ -204,15 +228,20 @@
   <section id="services" class="services-section">
 
     <div class="bubbles-container">
-      <div class="bubble">Policy<br>Papers</div>
-      <div class="bubble">Eventos y<br>Conferencias</div>
-      <div class="bubble">Informes<br>Estratégicos</div>
-      <div class="bubble">Briefings<br>Ejecutivos</div>
-      <div class="bubble">Laboratorio<br>de políticas</div>
-      <div class="bubble">Escenarios<br>Prospectivos</div>
-      <div class="bubble">Publicaciones<br>Digitales</div>
-      <div class="bubble">Consultoria<br>Estrategica</div>
+        <div class="bubble">Policy<br>Papers</div>
+        <div class="bubble">Eventos y<br>Conferencias</div>
+        <div class="bubble">Informes<br>Estratégicos</div>
+        <div class="bubble">Briefings<br>Ejecutivos</div>
+        <div class="bubble">Laboratorio<br>de políticas</div>
+        <div class="bubble">Escenarios<br>Prospectivos</div>
+        <div class="bubble">Publicaciones<br>Digitales</div>
+        <div class="bubble">Consultoria<br>Estrategica</div>
     </div>
   </section>
+
+  <!-- THINKING CENTER SECTION -->
+  <section>
+  </section>
+
 </main>
 

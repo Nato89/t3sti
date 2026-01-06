@@ -1,0 +1,72 @@
+/* HERO SECTION */
+
+/* Boton de centro de pensamiento */
+.btn-centro-container {
+    position: absolute;
+    top: 2rem;
+    right: 6rem;
+    z-index: 100;
+}
+
+.hero-logo-large {
+  position: absolute;
+  top: -21%;   /* controla la altura vertical */
+  left: -4%;   /* controla la distancia desde la izquierda */
+}
+
+.shield-logo-hero-placeholder {
+    width: 400px;
+    height: 800px;
+}
+
+.logo-giro {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: rotate(-90deg) scale(0.9);
+}
+
+.hero-bottom-right {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+
+.btn-centro {
+    display: inline-block;
+    padding: 1rem 1rem;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+}
+.btn-centro:hover {
+    background-color: #ffcc00;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.strategy-text {
+    text-align: center;
+    color: #828282;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+}
+
+.complex {
+    color: #D9D9D9;
+}
+
+/* Gifs como fondos de sección */
+.hero-section{
+    background-image: url('/assets/images/monje_fondo.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}

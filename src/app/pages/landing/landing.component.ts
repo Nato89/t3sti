@@ -8,7 +8,15 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink, MeshComponent],
   templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.css']
+  styleUrls: [
+    './landing.component.css',   // utilidades compartidas
+    './landing-hero.css',
+    './landing-identity.css',
+    './landing-team.css',
+    './landing-areas.css',
+    './landing-services.css',
+    './landing-centro.css'
+  ]
 })
 export class LandingComponent {
 
@@ -61,5 +69,16 @@ verMas(miembro: any) {
     this.mostrarLogo = true;
     this.contenidoActual = null;
   }
+
+ currentSlide = 0;
+totalSlides = 6; // número de slides que tienes
+
+prevSlide() {
+  this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+}
+
+nextSlide() {
+  this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+}
 
 }

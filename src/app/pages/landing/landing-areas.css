@@ -1,0 +1,94 @@
+/* PRACTICING AREAS SECTION */
+.areas-header {
+    width: 100%;
+    background: #e8e8e8;
+    text-align: center;
+}
+
+.areas-header p {
+    color: #000;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.areas-header span {
+    color: #cda476;
+    font-family: serif;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.gold-text {
+    color: #cda476;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+/* .areas-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+} */
+
+
+.areas-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.areas-content h2 {
+    margin-bottom: 3rem;
+    position: absolute;
+    top: 26%;
+    justify-content: center;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.carousel-slide {
+  display: none;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+.carousel-arrow-left {
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    transform: translateY(-50%);
+    font-size: 5rem;
+    color: #cda476;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.carousel-arrow-right {
+    position: absolute;
+    top: 55%;
+    right: 25%;;
+    transform: translateY(-50%);
+    font-size: 5rem;
+    color: #cda476;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+
+/* .arrow-btn:hover {
+    color: #fff;
+} */
+

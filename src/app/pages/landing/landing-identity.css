@@ -1,0 +1,128 @@
+/* IDENTITY SECTION */
+/* Caja contenedora */
+.identity-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Identity izq */
+.identity-izq {
+   flex: 0 0 80%;
+}
+
+/* Bloque contenido dinámico */
+.ctn-identity-clase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 1rem;
+    transition: opacity 0.4s ease;
+}
+
+/* Título */
+.ctn-identity-clase h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 1px;
+    text-decoration: underline;
+}
+
+/* Texto */
+.ctn-identity-clase p {
+    font-size: 2rem;
+    line-height: 1.7;
+    color: #828282;
+    margin: 0;
+    text-align: left;
+    max-width: 600px;
+    white-space: pre-line; /* para respetar saltos de línea */
+}
+
+.logo-t3sti-clase {
+    display: inline-block;
+    max-width: fit-content;
+    max-height: fit-content;
+    padding: 0;
+    margin: 0;
+}
+
+.logo-t3sti-clase img {
+  max-width: 100%; /* ajusta el tamaño del logo */
+  height: auto;
+  transition: opacity 0.4s ease;
+}
+
+
+/* Identity der */
+.identity-der {
+    flex: 0 0 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.lapiz-container {
+    position: relative;
+    display: inline-block;
+}
+
+.lapiz-base {
+    display: block;
+    max-width: 300px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    opacity: 0.3; /* Hace que la imagen base sea opaca */
+}
+
+/* Hoover corona-lineas-punta */
+.corona {
+    position: absolute;
+    top: 17px;
+    left: 15%;
+    width: 70%;
+    height: 40%;
+    cursor: pointer;
+    /* background: rgba(255, 255, 255, 0.2); */
+}
+
+.lineas {
+    position: absolute;
+    top: 237px;
+    left: 15%;
+    width: 70%;
+    height: 13%;
+    cursor: pointer;
+    /* background: rgba(255, 255, 255, 0.2); */
+}
+
+.punta {
+    position: absolute;
+    bottom: 6px;
+    left: 15%;
+    width: 70%;
+    height: 40%;
+    cursor: pointer;
+   /* background: rgba(255, 255, 255, 0.2); */
+}
+
+.highlights {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.corona:hover  .highlights,
+.lineas:hover  .highlights,
+.punta:hover  .highlights {
+    opacity: 1;
+}
