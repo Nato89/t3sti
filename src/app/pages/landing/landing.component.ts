@@ -1,7 +1,8 @@
 import { MeshComponent } from '../mesh/mesh.component';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-landing',
@@ -73,12 +74,19 @@ verMas(miembro: any) {
  currentSlide = 0;
 totalSlides = 6; // número de slides que tienes
 
-prevSlide() {
-  this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
-}
+    prevSlide() {
+      this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+    }
 
-nextSlide() {
-  this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
-}
+    nextSlide() {
+      this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+    }
+
+    // Señal para las burbujas
+    selectedBubble = signal<string | null>(null);
+
+    showDescription(bubbleId: string | null) {
+      this.selectedBubble.set(bubbleId);
+    }
 
 }

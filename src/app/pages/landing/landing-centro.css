@@ -1,8 +1,0 @@
-/* THINKING CENTER SECTION */
-#services {
-  background-image: url('/assets/images/astronauta.png');
-  background-size: cover;       /* hace que la imagen cubra todo el área */
-  background-position: center;  /* centra la imagen */
-  background-repeat: no-repeat; /* evita que se repita */
-  height: 200vh;                /* ocupa toda la altura de la pantalla */
-}

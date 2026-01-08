@@ -1,58 +1,239 @@
+/* THINKING CENTER SECTION */
+/* Astronauta */
+#services {
+  background-image: url('/assets/images/astronauta.png');
+  background-size: cover;       /* hace que la imagen cubra todo el área */
+  background-position: center;  /* centra la imagen */
+  background-repeat: no-repeat; /* evita que se repita */
+  height: 200vh;                /* ocupa toda la altura de la pantalla */
+}
 
 /* SERVICES SECTION */
+.ps-title {
+    position: relative;
+    margin: 4rem auto 0;
+    color: #A48859;
+    font-size: 4rem;
+    font-weight: 750;
+}
+
+.bubbles-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Al pasar el mouse sobre la burbuja, se muestra el texto */
+#policy:hover .description-policy,
+#events:hover .description-events,
+#reports:hover .description-reports,
+#lab:hover .description-lab,
+#scenarios:hover .description-scenarios,
+#publications:hover .description-publications,
+#briefings:hover .description-briefings,
+#consulting:hover .description-consulting {
+  display: block;
+}
+
+/* Textos y recuadros al hacer hover en las burbujas */
+.description-policy {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 82%;
+    width: 300px;
+    min-height: 80px;
+    border-radius: 40px;
+    background: #FFFFFF;
+    color: #000000;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.description-events {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 85%;
+    width: 300px;
+    min-height: 80px;
+    border-radius: 40px;
+    background: #FFFFFF;
+    color: #000000;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.description-reports {
+    display: none;
+    position: absolute;
+    top: -10px;
+    left: 80%;
+    width: 300px;
+    min-height: 80px;
+    border-radius: 40px;
+    background: #FFFFFF;
+    color: #000000;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.description-lab {
+    display: none;
+    position: absolute;
+    top: -36px;
+    right: 65%;
+    width: 300px;
+    min-height: 80px;
+    border-radius: 40px;
+    background: #FFFFFF;
+    color: #000000;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.description-scenarios {
+    display: none;
+    position: absolute;
+    top: -32px;
+    left: 70%;
+    width: 244px;
+    min-height: 80px;
+    border-radius: 40px;
+    background: #FFFFFF;
+    color: #000000;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.description-publications {
+    display: none;
+    position: absolute;
+    top: -36px;
+    right: 65%;
+    width: 300px;
+    min-height: 80px;
+    border-radius: 40px;
+    background: #FFFFFF;
+    color: #000000;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.description-briefings {
+    display: none;
+    position: absolute;
+    bottom: 104px;
+    left: 70%;
+    width: 300px;
+    min-height: 80px;
+    border-radius: 40px;
+    background: #FFFFFF;
+    color: #000000;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.description-consulting {
+    display: none;
+    position: absolute;
+    bottom: 105px;
+    right: 78%;
+    width: 300px;
+    min-height: 80px;
+    border-radius: 40px;
+    background: #FFFFFF;
+    color: #000000;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+
+/* Burbujas */
 .bubble {
     position: absolute;
     width: 160px;
     height: 160px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 500;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
+    transform-origin: center center;
 }
 
 .bubble:hover {
     transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.3);
+    background: #ffffff;
+    color: black;
 }
 
-.bubble:nth-child(1) {
-    top: 15%;
-    left: 20%;
+#policy {
+    top: 10%;
+    left: 22%;
 }
 
-.bubble:nth-child(2) {
-    top: 15%;
-    right: 20%;
+#events {
+    top: 10%;
+    right: 22%;
 }
 
-.bubble:nth-child(3) {
-    top: 40%;
+#reports {
+   top: 30%;
+   left: 15%;
+}
+
+#lab {
+    top: 30%;
+    right: 18%;
+}
+
+#scenarios {
+    bottom: 40%;
     left: 10%;
 }
 
-.bubble:nth-child(4) {
-    display: none;
+#publications {
+    bottom: 40%;
+    right: 15%;
 }
 
-.bubble:nth-child(5) {
-    top: 40%;
-    right: 10%;
+#briefings {
+    bottom: 20%;
+    left: 5%;
 }
 
-.bubble:nth-child(6) {
-    bottom: 15%;
-    left: 20%;
-}
-
-.bubble:nth-child(7) {
-    bottom: 15%;
-    right: 20%;
+#consulting {
+    bottom: 20%;
+    right: 15%;
 }
