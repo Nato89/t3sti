@@ -1,0 +1,41 @@
+/* Fondo monje-final */
+.center-section {
+    height: 100vh;
+    /* Fondo negro mitad superior-fondo blanco mitad inferior */
+    background: linear-gradient(to bottom,
+              black 50%,   /* primera mitad */
+              white 50%);  /* segunda mitad */
+
+}
+
+.monje-final {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    height: 90%;
+    width: auto;
+}
+
+.monje-final-img {
+    height: 100%;
+}
+
+.boton-cp {
+  position: absolute;
+  bottom: 10%;
+  left: 18%;
+  background-color: #FFFFFF;
+  color: #A48859;
+  border: 0.4rem solid #A48859;
+  padding: 1rem;
+  border-radius: 3rem;
+  height: 5rem;
+  width: 30rem;
+  font-size: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
