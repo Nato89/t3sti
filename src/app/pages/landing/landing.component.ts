@@ -1,7 +1,7 @@
 import { MeshComponent } from '../mesh/mesh.component';
-import { Component, signal } from '@angular/core';
+import { Component, signal, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -19,7 +19,24 @@ import { RouterLink } from '@angular/router';
     './landing-centro.css'
   ]
 })
-export class LandingComponent {
+export class LandingComponent implements AfterViewInit {
+
+   constructor(private route: ActivatedRoute) {}
+
+  ngAfterViewInit() {
+    this.route.fragment.subscribe((id) => {
+      if (!id) return;
+
+      // Espera a que el DOM esté pintado y luego hace scroll
+      requestAnimationFrame(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  }
+
 
   // Inicialmente el logo se muestra, pero cuando se pasa el mouse por el lapiz, se oculta
   mostrarLogo: boolean = true;
