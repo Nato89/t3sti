@@ -1,3 +1,4 @@
+import 'zone.js';  // Necesario para Angular 19
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { App } from './app/app';

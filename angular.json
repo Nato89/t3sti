@@ -17,6 +17,8 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "index": "src/index.html",
+            "outputPath": "dist/test-simple",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
