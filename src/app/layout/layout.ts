@@ -3,16 +3,17 @@ import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { filter, take } from 'rxjs/operators';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './layout.html',
   styleUrls: ['./layout.css']
 })
 export class Layout {
-  constructor(private router: Router, private viewportScroller: ViewportScroller) {}
+  constructor(public router: Router, private viewportScroller: ViewportScroller) {}
 
   scrollTo(id: string) {
   const doScroll = () => this.viewportScroller.scrollToAnchor(id);

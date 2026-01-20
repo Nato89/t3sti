@@ -1,9 +1,9 @@
-<nav class="navbar">
-    <div class="menu">
-        <button (click)="scrollTo('identity')">Sobre Nosotros</button>
-        <button (click)="scrollTo('team')">Nuestro Equipo</button>
-        <button (click)="scrollTo('areas')">Áreas de Práctica</button>
-    </div>
+<nav class="navbar" [ngClass]="{ 'navbar-dark': router.url === '/', 'navbar-light': router.url === '/centro-pensamiento' }">
+  <div class="menu">
+    <button (click)="scrollTo('identity')">Sobre Nosotros</button>
+    <button (click)="scrollTo('team')">Nuestro Equipo</button>
+    <button (click)="scrollTo('areas')">Áreas de Práctica</button>
+  </div>
 </nav>
 
 <!-- Conector de la landing -->

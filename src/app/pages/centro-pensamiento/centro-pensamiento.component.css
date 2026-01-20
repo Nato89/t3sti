@@ -1,0 +1,203 @@
+/* Aplica fondo blanco a toda la página de Centro de Pensamiento */
+:host {
+  background-color: #ffffff;
+  min-height: 200vh;   /* asegura que cubra toda la altura de la ventana */
+  /* width: 100%; */
+}
+
+
+.logo-clickable {
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    display: flex;
+    cursor: pointer;
+    width: 20rem;
+    z-index: 100; /* asegúrate de que esté por encima de otros elementos */
+}
+
+/* CSS */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 9%;
+    min-height: 30vh;
+    gap: 8rem;
+    max-width: 100%;;               /* espacio entre los recuadros */
+}
+
+.cp-filters {
+    width: 35%;
+    border: 2px solid #0077cc;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Recuadro superior: 2 columnas */
+.cp-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.cp-search {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.search-bar {
+    position: relative;
+    width: 100%;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 40px 10px 40px;
+    border: 1px solid #ccc;
+    background-color: #F5F5F5;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+.menu-icon {
+    position: absolute;
+    left: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+}
+
+.search-icon {
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.search-icon img {
+    width: 80%;
+    height: auto;
+}
+
+/* Recuadro 2: Autores */
+.filter-autores {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.filter-autores img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.filter-autores img:hover {
+    border-color: #0077cc;
+}
+
+/* Recuadro 3: botones de filtro */
+.filter-buttons {
+    display: flex;
+    /* flex-direction: wrap; */
+    gap: 1.6rem;
+}
+
+.filter-buttons button {
+    padding: 8px 12px;
+    background-color: #F5F5F5;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Recuadro 3 */
+.box {
+    width: 35%;
+    background-color: #000000;
+    border: 2px solid #000000;
+    opacity: 0.6;
+    border-radius: 15px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.titulo-cepe {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+}
+
+.text-cepe {
+    font-size: 1rem;
+    color: #FFFFFF;
+    line-height: 1.6;
+}
+
+
+/* lista y red neuronal */
+.view-selector {
+    display: flex;
+    justify-content: center;
+    /* gap: 10rem; */
+    margin: 2rem;
+    background-color: rgba(196, 204, 244, 0.4);
+    border-radius: 20px;   /* borde redondeado al grupo */
+    overflow: hidden;      /* recorta los hijos dentro */
+
+}
+
+.view-btn {
+  display: flex;              /* coloca icono y texto en fila */
+  align-items: center;        /* centra verticalmente */
+  justify-content: center;    /* centra horizontalmente */
+  gap: 0.5rem;                /* espacio entre icono y texto */
+  flex: 1;
+  padding: 0.6rem 1.2rem;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+}
+
+
+.btn-icon {
+  background: transparent;
+  width: 1rem;
+  height: auto;
+  object-fit: contain;
+  transition: all 0.2s ease; /* mismo efecto que el texto */
+}
+
+/* Hover: fondo cambia y texto se hace pequeño */
+.view-btn:hover {
+  background-color: rgba(0, 119, 204, 0.2); /* azul claro al pasar */
+  font-size: 0.9rem; /* texto un poco más pequeño */
+}
+
+.view-btn:hover .btn-icon {
+  transform: scale(0.9); /* se reduce igual que el texto */
+}
+
+.view-btn.active .btn-icon {
+  filter: invert(42%) sepia(23%) saturate(450%) hue-rotate(356deg) brightness(92%) contrast(85%);
+  /* este filtro aproxima el color #A48859 */
+}
+
+/* Estado activo: cuando se selecciona con click */
+.view-btn.active {
+  color: #A48859; /* texto blanco */
+}

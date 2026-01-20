@@ -1,1 +1,89 @@
-<p>centro-pensamiento works!</p>
+<div class="logo-clickable">
+    <img src="assets/images/t3sti_3.svg" alt="logo t3sti" class="" routerLink="/">
+</div>
+
+<!-- HTML -->
+<!-- contenedor global -->
+<div>
+
+  <!-- Contenedor de recuadros filtro y centro de pensamiento -->
+    <div class="container">
+
+        <div class="cp-filters">
+
+            <!-- Recuadro superior -->
+            <div class="cp-top">
+
+              <!-- Recuadro 1: Barra de búsqueda -->
+              <div class="cp-search">
+                  <div class="search-bar">
+                      <span class="menu-icon">☰</span>
+                      <input type="text" id="searchInput" placeholder="Buscar artículo" />
+                      <button class="search-icon" onclick="buscar()">
+                        <img src="assets/images/lupa.png" alt="Buscar" />
+                      </button>
+                  </div>
+              </div>
+
+              <!-- Recuadro 2: Filtros por autor -->
+              <div class="filter-autores">
+                  <img src="assets/images/virginia-confiantini.png" alt="Virginia" />
+                  <img src="assets/images/carlos-maldonado.png" alt="Carlos" />
+                  <img src="assets/images/felipe-rojas.png" alt="Felipe" />
+              </div>
+
+            </div>
+
+          <!-- Recuadro 3 inferior: Botones de filtro -->
+          <div class="filter-buttons">
+              <button>2025</button>
+              <button>Más Recientes</button>
+              <button>País</button>
+              <button>x</button>
+              <button>y</button>
+              <button>z</button>
+          </div>
+
+        </div>
+
+      <div class="box">
+          <h2 class="titulo-cepe">Centro de Pensamiento</h2>
+          <p class="text-cepe">Este es el espacio donde compartimos ideas, reflexiones y herramientas para entender mejor el mundo que habitamos y transformarlo desde la complejidad y a gerencia cuántica.</p>
+      </div>
+
+    </div>
+
+    <!-- Selector de vista -->
+    <div class="view-selector">
+        <button
+            class="view-btn"
+            [class.active]="vistaActual === 'lista'"
+            (click)="cambiarVista('lista')">
+            <img src="assets/images/list-icon.png" alt="Icono Lista" class="btn-icon">
+            Lista
+        </button>
+        <button
+            class="view-btn"
+            [class.active]="vistaActual === 'red'"
+            (click)="cambiarVista('red')">
+            <img src="assets/images/image-icon.png" alt="Icono Red Neuronal" class="btn-icon">
+            Red Neuronal
+        </button>
+    </div>
+
+    <!-- Contenedor dinámico de la vista -->
+    <div id="articlesView">
+        @if (vistaActual === 'lista') {
+            <div class="lista-view">
+                <p>Lista</p>
+            </div>
+        }
+        @else if (vistaActual === 'red') {
+            <div class="red-view">
+                <p>Red Neuronal(pendiente de implementar)</p>
+            </div>
+            }
+    </div>
+
+</div>
+                                        
