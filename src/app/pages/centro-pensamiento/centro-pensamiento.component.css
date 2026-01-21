@@ -201,3 +201,113 @@
 .view-btn.active {
   color: #A48859; /* texto blanco */
 }
+
+/* 3 primeros artículos de lista */
+.lista-view {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  justify-content: center;
+  margin: 1.8%;
+}
+
+.articulo-card {
+      background-color: #F7F7F7;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 30%;
+    height: 35rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative;  /* Importante para ubicar el boton de ver más */
+}
+
+.autor-foto {
+  width: 4rem;
+  height: auto;
+  border-radius: 50%;
+  margin-right: 1.8rem;
+}
+
+.autor-nombre {
+  font-weight: 600;
+}
+
+.autor-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.autor-detalle {
+  display: flex;
+  flex-direction: column;
+}
+
+.fecha {
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.portada-img {
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 0.8rem;
+}
+
+
+.articulo-card button {
+  background-color: #A48859;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  align-self: flex-end; /* lo manda al lateral derecho */
+}
+
+.articulo-card button:hover {
+  background-color: #8C6F4A;
+}
+
+.articulo-card h3 {
+  margin-top: 4%;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.articulo-card p {
+  margin-bottom: 0.3rem;
+}
+
+.titulo {
+  color: #000;
+  font-size: 1rem;
+  margin: 0.3rem 0;
+}
+
+.descripcion {
+  color: rgba(0, 0, 0, 0.6); /* gris con opacidad */
+  font-size: 0.95rem;
+  margin-bottom: 2.5rem; /* espacio para el botón */
+}
+
+.leer-btn {
+  position: absolute;
+  bottom: 1.3rem;
+  right: 2rem;
+  background-color: #A48859;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 3rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.leer-btn:hover {
+  background-color: #8c6f45;
+}

@@ -27,7 +27,7 @@
 
               <!-- Recuadro 2: Filtros por autor -->
               <div class="filter-autores">
-                  <img src="assets/images/virginia-confiantini.png" alt="Virginia" />
+                  <img src="assets/images/virginia-gonfiantini.png" alt="Virginia" />
                   <img src="assets/images/carlos-maldonado.png" alt="Carlos" />
                   <img src="assets/images/felipe-rojas.png" alt="Felipe" />
               </div>
@@ -75,9 +75,30 @@
     <div id="articlesView">
         @if (vistaActual === 'lista') {
             <div class="lista-view">
-                <p>Lista</p>
+                @for (articulo of articulos; track articulo.id) {
+                    <div class="articulo-card">
+
+                      <div class="autor-info">
+                          <img [src]="articulo.fotoAutor" alt="Foto del autor" class="autor-foto">
+                          <div class="autor-detalle">
+                              <p class="autor-nombre">{{ articulo.autor }}</p>
+                              <p class="fecha">{{ articulo.fecha }}</p>
+                          </div>
+                      </div>
+
+                          <img [src]="articulo.portada" alt="Portada del artículo" class="portada-img">
+
+                          <h3 class="titulo">{{ articulo.titulo }}</h3>
+                          <p class="subtitulo">{{ articulo.subtitulo }}</p>
+                          <p class="descripcion">{{ articulo.descripcion }}</p>
+
+                          <a [href]="articulo.pdfUrl" target="_blank" class="leer-btn">Leer</a>
+
+                    </div>
+
+                  }
             </div>
-        }
+          }
         @else if (vistaActual === 'red') {
             <div class="red-view">
                 <p>Red Neuronal(pendiente de implementar)</p>
@@ -86,4 +107,3 @@
     </div>
 
 </div>
-                                        
