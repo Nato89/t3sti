@@ -20,7 +20,7 @@
                       <span class="menu-icon">☰</span>
                       <input type="text" id="searchInput" placeholder="Buscar artículo" />
                       <button class="search-icon" onclick="buscar()">
-                        <img src="assets/images/lupa.png" alt="Buscar" />
+                        <img src="assets/icons/lupa.png" alt="Buscar" />
                       </button>
                   </div>
               </div>
@@ -59,14 +59,14 @@
             class="view-btn"
             [class.active]="vistaActual === 'lista'"
             (click)="cambiarVista('lista')">
-            <img src="assets/images/list-icon.png" alt="Icono Lista" class="btn-icon">
+            <img src="assets/icons/list-icon.png" alt="Icono Lista" class="btn-icon">
             Lista
         </button>
         <button
             class="view-btn"
             [class.active]="vistaActual === 'red'"
             (click)="cambiarVista('red')">
-            <img src="assets/images/image-icon.png" alt="Icono Red Neuronal" class="btn-icon">
+            <img src="assets/icons/image-icon.png" alt="Icono Red Neuronal" class="btn-icon">
             Red Neuronal
         </button>
     </div>
@@ -110,7 +110,7 @@
                     <p class="descripcion">{{ articulo.descripcion }}</p>
                 </div>
                 <div class="flecha-container">
-                    <img src="assets/images/arrow-icon.png" alt="Flecha">
+                    <img src="assets/icons/arrow-icon.png" alt="Flecha">
                 </div>
             </div>
         }
