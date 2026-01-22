@@ -57,15 +57,63 @@ export class CentroPensamientoComponent {
     subtitulo: 'Revolución científica y políticas públicas',
     descripcion: 'Este artículo formula un problema: la ciencia en América Latina nace...',
     pdfUrl: 'assets/pdfs/desinstitucionalizar-la-ciencia-Dr_Felipe_Rojas_Toro.pdf'
-  }
+  },
+  {
+    id: 4,
+    autor: 'xxxx xxxx',
+    fecha: '',
+    fotoAutor: '',
+    portada: '',
+    titulo: 'Teoría del derecho modo complejo',
+    subtitulo: 'Un bosquejo sobre la epigenética jurídica',
+    descripcion: 'La teoría del derecho positivo es inconsistente porque tiende a ser completa...',
+    pdfUrl: 'assets/pdfs/articulo4.pdf'
+  },
+  {
+    id: 5,
+    autor: 'xxxx xxxx',
+    fecha: '',
+    fotoAutor: '',
+    portada: '',
+    titulo: 'El problema de la ética: el Convivio',
+    subtitulo: 'Ética e Inteligencia Artificial',
+    descripcion: 'Este artículo afirma que el problema principal que plantea la IA es...',
+    pdfUrl: 'assets/pdfs/articulo5.pdf'
+  },
+  {
+    id: 4,
+    autor: 'xxxx xxxx',
+    fecha: '',
+    fotoAutor: '',
+    portada: '',
+    titulo: 'Teoría del derecho modo complejo',
+    subtitulo: 'Un bosquejo sobre la epigenética jurídica',
+    descripcion: 'La teoría del derecho positivo es inconsistente porque tiende a ser completa...',
+    pdfUrl: 'assets/pdfs/articulo4.pdf'
+  },
+  {
+    id: 5,
+    autor: 'xxxx xxxx',
+    fecha: '',
+    fotoAutor: '',
+    portada: '',
+    titulo: 'El problema de la ética: el Convivio',
+    subtitulo: 'Ética e Inteligencia Artificial',
+    descripcion: 'Este artículo afirma que el problema principal que plantea la IA es...',
+    pdfUrl: 'assets/pdfs/articulo5.pdf'
+  },
   ];
 
-  cambiarVista(vista: 'lista' | 'red') {
+    cambiarVista(vista: 'lista' | 'red') {
     this.vistaActual = vista;
   }
 
   verDetalle(articulo: Articulo) {
       console.log (`Detalle del artículo:`, articulo);
+  }
+
+  abrirArticulo(url: string) {
+  window.open(url, '_blank');
   }
 
 }

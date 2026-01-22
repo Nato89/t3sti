@@ -72,38 +72,56 @@
     </div>
 
     <!-- Contenedor dinámico de la vista -->
-    <div id="articlesView">
-        @if (vistaActual === 'lista') {
-            <div class="lista-view">
-                @for (articulo of articulos; track articulo.id) {
-                    <div class="articulo-card">
-
-                      <div class="autor-info">
-                          <img [src]="articulo.fotoAutor" alt="Foto del autor" class="autor-foto">
-                          <div class="autor-detalle">
-                              <p class="autor-nombre">{{ articulo.autor }}</p>
-                              <p class="fecha">{{ articulo.fecha }}</p>
-                          </div>
-                      </div>
-
-                          <img [src]="articulo.portada" alt="Portada del artículo" class="portada-img">
-
-                          <h3 class="titulo">{{ articulo.titulo }}</h3>
-                          <p class="subtitulo">{{ articulo.subtitulo }}</p>
-                          <p class="descripcion">{{ articulo.descripcion }}</p>
-
-                          <a [href]="articulo.pdfUrl" target="_blank" class="leer-btn">Leer</a>
-
+    <!-- Contenedor dinámico de la vista -->
+<div id="articlesView">
+  @if (vistaActual === 'lista') {
+    <!-- Bloque de los 3 primeros artículos (NO TOCAR) -->
+    <div class="lista-view">
+        @for (articulo of articulos; track articulo.id) {
+          @if (articulo.id <= 3) {
+              <div class="articulo-card">
+                  <div class="autor-info">
+                    <img [src]="articulo.fotoAutor" alt="Foto del autor" class="autor-foto">
+                    <div class="autor-detalle">
+                        <p class="autor-nombre">{{ articulo.autor }}</p>
+                        <p class="fecha">{{ articulo.fecha }}</p>
                     </div>
+                  </div>
 
-                  }
+                  <img [src]="articulo.portada" alt="Portada del artículo" class="portada-img">
+                  <h3 class="titulo">{{ articulo.titulo }}</h3>
+                  <p class="subtitulo">{{ articulo.subtitulo }}</p>
+                  <p class="descripcion">{{ articulo.descripcion }}</p>
+                  <a [href]="articulo.pdfUrl" target="_blank" class="leer-btn">Leer</a>
             </div>
           }
-        @else if (vistaActual === 'red') {
-            <div class="red-view">
-                <p>Red Neuronal(pendiente de implementar)</p>
-            </div>
-            }
+        }
     </div>
+
+    <!-- Bloque separado para los artículos simples -->
+    <div class="lista-simples">
+      @for (articulo of articulos; track articulo.id) {
+        @if (articulo.id > 3) {
+            <div class="articulo-card-simple" (click)="abrirArticulo(articulo.pdfUrl)">
+                <div class="articulo-texto">
+                    <h3 class="titulo">{{ articulo.titulo }}</h3>
+                    <p class="autor-nombre">{{ articulo.autor }}</p>
+                    <p class="subtitulo">{{ articulo.subtitulo }}</p>
+                    <p class="descripcion">{{ articulo.descripcion }}</p>
+                </div>
+                <div class="flecha-container">
+                    <img src="assets/images/arrow-icon.png" alt="Flecha">
+                </div>
+            </div>
+        }
+      }
+    </div>
+  }
+  @else if (vistaActual === 'red') {
+    <div class="red-view">
+       <p>Red Neuronal (pendiente de implementar)</p>
+    </div>
+  }
+</div>
 
 </div>
