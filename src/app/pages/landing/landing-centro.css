@@ -3,8 +3,8 @@
     height: 100vh;
     /* Fondo negro mitad superior-fondo blanco mitad inferior */
     background: linear-gradient(to bottom,
-              black 50%,   /* primera mitad */
-              white 50%);  /* segunda mitad */
+              black 50%,
+              white 50%);
 
 }
 
@@ -38,4 +38,3 @@
   align-items: center;
   align-content: center;
 }
-

@@ -1,4 +1,3 @@
-import { MeshComponent } from '../mesh/mesh.component';
 import { Component, signal, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, ActivatedRoute } from '@angular/router';
@@ -7,7 +6,7 @@ import { RouterLink, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [CommonModule, RouterLink, MeshComponent],
+  imports: [CommonModule, RouterLink],
   templateUrl: './landing.component.html',
   styleUrls: [
     './landing.component.css',   // utilidades compartidas

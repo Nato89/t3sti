@@ -13,6 +13,5 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    scroll-margin-top: 100px; /* ajusta según la altura de tu header */
+    scroll-margin-top: 100px;
 }
-

@@ -41,7 +41,7 @@
     margin: 0;
     text-align: left;
     max-width: 600px;
-    white-space: pre-line; /* para respetar saltos de línea */
+    white-space: pre-line;
 }
 
 .logo-t3sti-clase {
@@ -53,7 +53,7 @@
 }
 
 .logo-t3sti-clase img {
-  max-width: 100%; /* ajusta el tamaño del logo */
+  max-width: 100%;
   height: auto;
   transition: opacity 0.4s ease;
 }
@@ -75,9 +75,9 @@
 
 .lapiz-base {
     display: block;
-    max-width: 300px; /* Ajusta el tamaño según sea necesario */
+    max-width: 300px;
     height: auto;
-    opacity: 0.3; /* Hace que la imagen base sea opaca */
+    opacity: 0.3;
 }
 
 /* Hoover corona-lineas-punta */

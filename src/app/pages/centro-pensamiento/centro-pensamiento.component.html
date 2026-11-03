@@ -10,40 +10,79 @@
     <div class="container">
 
         <div class="cp-filters">
-
-            <!-- Recuadro superior -->
-            <div class="cp-top">
-
-              <!-- Recuadro 1: Barra de búsqueda -->
-              <div class="cp-search">
-                  <div class="search-bar">
-                      <span class="menu-icon">☰</span>
-                      <input type="text" id="searchInput" placeholder="Buscar artículo" />
-                      <button class="search-icon" onclick="buscar()">
-                        <img src="assets/icons/lupa.png" alt="Buscar" />
-                      </button>
-                  </div>
-              </div>
-
-              <!-- Recuadro 2: Filtros por autor -->
-              <div class="filter-autores">
-                  <img src="assets/images/virginia-gonfiantini.png" alt="Virginia" />
-                  <img src="assets/images/carlos-maldonado.png" alt="Carlos" />
-                  <img src="assets/images/felipe-rojas.png" alt="Felipe" />
-              </div>
-
+          <label class="filter-label" for="searchInput">Buscar artículos</label>
+          <div class="cp-search">
+            <div class="search-bar">
+              <input
+                type="search"
+                id="searchInput"
+                name="search"
+                [(ngModel)]="terminoBusqueda"
+                placeholder="Título, tema o autor"
+                aria-label="Buscar por título, tema o autor">
+              <span class="search-icon" aria-hidden="true">
+                <img src="assets/icons/lupa.png" alt="">
+              </span>
             </div>
-
-          <!-- Recuadro 3 inferior: Botones de filtro -->
-          <div class="filter-buttons">
-              <button>2025</button>
-              <button>Más Recientes</button>
-              <button>País</button>
-              <button>x</button>
-              <button>y</button>
-              <button>z</button>
           </div>
 
+          <div class="filter-section">
+            <span class="filter-title">Autor</span>
+            <div class="filter-autores">
+              @for (autor of autores; track autor.nombre) {
+                <button
+                  type="button"
+                  class="author-filter"
+                  [class.selected]="autorSeleccionado === autor.nombre"
+                  [attr.aria-pressed]="autorSeleccionado === autor.nombre"
+                  (click)="alternarAutor(autor.nombre)">
+                  <img [src]="autor.foto" alt="">
+                  <span>{{ autor.nombreCorto }}</span>
+                </button>
+              }
+            </div>
+          </div>
+
+          <div class="filter-selects">
+            <label>
+              <span>Año</span>
+              <select name="year" [(ngModel)]="anioSeleccionado">
+                <option value="">Todos</option>
+                @for (anio of aniosDisponibles; track anio) {
+                  <option [value]="anio">{{ anio }}</option>
+                }
+              </select>
+            </label>
+
+            <label>
+              <span>País</span>
+              <select name="country" [(ngModel)]="paisSeleccionado" [disabled]="paisesDisponibles.length === 0">
+                <option value="">{{ paisesDisponibles.length ? 'Todos' : 'Sin datos' }}</option>
+                @for (pais of paisesDisponibles; track pais) {
+                  <option [value]="pais">{{ pais }}</option>
+                }
+              </select>
+            </label>
+
+            <label>
+              <span>Ordenar por</span>
+              <select name="sort" [(ngModel)]="ordenSeleccionado">
+                <option value="recientes">Más recientes</option>
+                <option value="antiguos">Más antiguos</option>
+                <option value="titulo">Título A-Z</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="filter-footer">
+            <span>{{ articulosFiltrados.length }} artículos</span>
+            @if (paisesDisponibles.length === 0) {
+              <span class="filter-note">El filtro por país estará disponible cuando se agregue ese dato.</span>
+            }
+            <button type="button" class="clear-filters" (click)="limpiarFiltros()" [disabled]="!hayFiltrosActivos">
+              Limpiar filtros
+            </button>
+          </div>
         </div>
 
       <div class="box">
@@ -77,8 +116,7 @@
   @if (vistaActual === 'lista') {
     <!-- Bloque de los 3 primeros artículos (NO TOCAR) -->
     <div class="lista-view">
-        @for (articulo of articulos; track articulo.id) {
-          @if (articulo.id <= 3) {
+        @for (articulo of articulosDestacados; track $index) {
               <div class="articulo-card">
                   <div class="autor-info">
                     <img [src]="articulo.fotoAutor" alt="Foto del autor" class="autor-foto">
@@ -94,14 +132,12 @@
                   <p class="descripcion">{{ articulo.descripcion }}</p>
                   <a [href]="articulo.pdfUrl" target="_blank" class="leer-btn">Leer</a>
             </div>
-          }
         }
     </div>
 
     <!-- Bloque separado para los artículos simples -->
     <div class="lista-simples">
-      @for (articulo of articulos; track articulo.id) {
-        @if (articulo.id > 3) {
+      @for (articulo of articulosSecundarios; track $index) {
             <div class="articulo-card-simple" (click)="abrirArticulo(articulo.pdfUrl)">
                 <div class="articulo-texto">
                     <h3 class="titulo">{{ articulo.titulo }}</h3>
@@ -113,14 +149,110 @@
                     <img src="assets/icons/arrow-icon.png" alt="Flecha">
                 </div>
             </div>
-        }
       }
     </div>
+    @if (articulosFiltrados.length === 0) {
+      <p class="no-results">No encontramos artículos con esos filtros.</p>
+    }
   }
   @else if (vistaActual === 'red') {
-    <div class="red-view">
-       <p>Red Neuronal (pendiente de implementar)</p>
-    </div>
+    @let red = datosRed;
+    <section class="red-view" aria-labelledby="network-title">
+      <div class="network-heading">
+        <div>
+          <h2 id="network-title">Autores y publicaciones</h2>
+          <p>Selecciona un autor para filtrar o una publicación para abrirla.</p>
+        </div>
+      </div>
+
+      @if (red.publicaciones.length === 0) {
+        <p class="no-results">No hay publicaciones que coincidan con los filtros.</p>
+      } @else {
+        <div class="network-scroll">
+          <svg
+            class="network-svg"
+            [attr.viewBox]="'0 0 1000 ' + red.alto"
+            [attr.height]="red.alto"
+            role="group"
+            aria-labelledby="network-title"
+            preserveAspectRatio="xMinYMin meet">
+            <defs>
+              @for (autor of red.autores; track autor.clipId) {
+                <clipPath [attr.id]="autor.clipId">
+                  <circle cx="190" [attr.cy]="autor.y" r="29"></circle>
+                </clipPath>
+              }
+            </defs>
+            <text class="network-column-label" x="125" y="34">AUTORES</text>
+            <text class="network-column-label" x="590" y="34">PUBLICACIONES</text>
+
+            <g class="network-links" aria-hidden="true">
+              @for (enlace of red.enlaces; track enlace.id) {
+                <path
+                  [attr.d]="'M 222 ' + enlace.yAutor + ' C 360 ' + enlace.yAutor + ', 430 ' + enlace.yPublicacion + ', 570 ' + enlace.yPublicacion">
+                </path>
+              }
+            </g>
+
+            @for (autor of red.autores; track autor.id) {
+              <g
+                class="network-author"
+                [class.selected]="autorSeleccionado === autor.filtro"
+                role="button"
+                tabindex="0"
+                [attr.aria-label]="autor.nombre + ', ' + autor.total + ' publicaciones. Filtrar por autor'"
+                [attr.aria-pressed]="autorSeleccionado === autor.filtro"
+                (click)="alternarAutor(autor.filtro)"
+                (keydown.enter)="alternarAutor(autor.filtro)"
+                (keydown.space)="alternarAutor(autor.filtro); $event.preventDefault()">
+                @if (autor.foto) {
+                  <image
+                    [attr.href]="autor.foto"
+                    x="161"
+                    [attr.y]="autor.y - 29"
+                    width="58"
+                    height="58"
+                    [attr.clip-path]="'url(#' + autor.clipId + ')'"
+                    preserveAspectRatio="xMidYMid slice">
+                  </image>
+                } @else {
+                  <circle class="network-author-avatar" cx="190" [attr.cy]="autor.y" r="29"></circle>
+                  <text class="network-author-initials" x="190" [attr.y]="autor.y + 5" text-anchor="middle">
+                    {{ autor.nombre.slice(0, 2).toLocaleUpperCase() }}
+                  </text>
+                }
+                <circle class="network-author-outline" cx="190" [attr.cy]="autor.y" r="29"></circle>
+                <text class="network-author-name" x="238" [attr.y]="autor.y - 3">{{ autor.nombre }}</text>
+                <text class="network-author-count" x="238" [attr.y]="autor.y + 16">
+                  {{ autor.total }} {{ autor.total === 1 ? 'publicación' : 'publicaciones' }}
+                </text>
+              </g>
+            }
+
+            @for (publicacion of red.publicaciones; track publicacion.indice) {
+              <g
+                class="network-publication"
+                role="link"
+                tabindex="0"
+                [attr.aria-label]="'Abrir publicación: ' + publicacion.articulo.titulo"
+                (click)="abrirArticulo(publicacion.articulo.pdfUrl)"
+                (keydown.enter)="abrirArticulo(publicacion.articulo.pdfUrl)">
+                <title>{{ publicacion.articulo.titulo }}</title>
+                <rect x="570" [attr.y]="publicacion.y - 25" width="370" height="50" rx="10"></rect>
+                <text class="network-publication-title" x="590" [attr.y]="publicacion.y - 3">
+                  {{ publicacion.articulo.titulo.length > 46
+                    ? publicacion.articulo.titulo.slice(0, 43) + '...'
+                    : publicacion.articulo.titulo }}
+                </text>
+                <text class="network-publication-date" x="590" [attr.y]="publicacion.y + 15">
+                  {{ publicacion.articulo.fecha || 'Fecha por confirmar' }}
+                </text>
+              </g>
+            }
+          </svg>
+        </div>
+      }
+    </section>
   }
 </div>
 

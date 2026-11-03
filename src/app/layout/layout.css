@@ -7,7 +7,7 @@
 
 /* Header (navbar) */
 .navbar {
-  position: absolute;   /* se superpone dentro del hero */
+  position: absolute;
   color: white;
   left: 0;
   right: 0;
@@ -15,12 +15,14 @@
   justify-content: center;
   align-items: center;
   padding: 40px 40px;
-  z-index: 100;   /* encima del hero */
+  z-index: 100;
+  pointer-events: none;
 }
 
 .menu {
   display: flex;
   gap: 70px;
+  pointer-events: auto;
 }
 
 .navbar button {
@@ -31,9 +33,9 @@
   }
 
   .navbar button:hover {
-    color: #ffcc00;  /* color amarillo al pasar el mouse */
-    text-shadow: 0 0 6px rgba(255, 255, 255, 0.6); /* efecto de resplandor */
-    transform: scale(1.1); /* ligero aumento de tamaño de los botones*/
+    color: #ffcc00;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+    transform: scale(1.1);
   }
 
 
@@ -58,7 +60,7 @@ footer {
 /* Columna izquierda y columna derecha */
 .footer-left,
 .footer-right {
-    flex: 1; /* cada columna ocupa el 50% de espacio */
+    flex: 1;
     max-width: 50%;
 }
 
@@ -85,18 +87,18 @@ footer {
 }
 
 .social-btn {
-  display: flex;              /* activa layout horizontal */
-  align-items: center;        /* centra verticalmente */
-  justify-content: center;    /* centra el contenido */
-  gap: 1rem;                /* espacio entre ícono y texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
   text-align: center;
   background: #fff;
 }
 
 .sn-icon {
-  width: 50px;   /* tamaño del ícono */
+  width: 50px;
   height: auto;
-  flex-shrink: 0;  /* evita que el ícono se reduzca */
+  flex-shrink: 0;
 }
 
 .red-contact {
@@ -176,9 +178,9 @@ footer {
   border-radius: 50%;
   background-color: currentColor;
   vertical-align: middle;
-  line-height: 0;              /* evita que aporte altura de línea */
-  transform: translateY(0.5em);/* microajuste visual hacia abajo */
-  opacity: 20%;          /* menor opacidad para el punto */
+  line-height: 0;
+  transform: translateY(0.5em);
+  opacity: 20%;
   }
 
 /* Footer bottom */
@@ -198,4 +200,3 @@ footer {
 .navbar-light button {
   color: black;
 }
-

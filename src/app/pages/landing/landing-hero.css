@@ -4,14 +4,14 @@
 .btn-centro-container {
     position: absolute;
     top: 2rem;
-    right: 6rem;
+    right: 2rem;
     z-index: 100;
 }
 
 .hero-logo-large {
   position: absolute;
-  top: -21%;   /* controla la altura vertical */
-  left: -4%;   /* controla la distancia desde la izquierda */
+  top: -21%;
+  left: -4%;
 }
 
 .shield-logo-hero-placeholder {
@@ -70,5 +70,4 @@
     background-repeat: no-repeat;
     height: 100vh;
 }
-
 
