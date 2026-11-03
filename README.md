@@ -3,6 +3,7 @@
 Plataforma digital para presentar el trabajo de T3STI y acercar publicaciones, autores y contenidos sobre pensamiento complejo y gerencia cuántica. Reúne en un mismo sitio la identidad del centro y una experiencia para explorar sus artículos.
 
 [![Angular](https://img.shields.io/badge/Angular-19-DD0031?logo=angular&logoColor=white)](https://angular.dev/)
+[![Firebase Hosting](https://img.shields.io/badge/Firebase-Hosting-FFCA28?logo=firebase&logoColor=black)](https://firebase.google.com/docs/hosting)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/docs/Web/CSS)
@@ -11,8 +12,10 @@ Plataforma digital para presentar el trabajo de T3STI y acercar publicaciones, a
 
 ## Vista previa
 
-- **Demo en Firebase:** URL pendiente de despliegue.
-- **Captura o GIF:** [Insertar imagen/GIF aquí]
+- **Demo en Firebase:** [https://t3sti-app.web.app](https://t3sti-app.web.app)
+- **Captura o GIF:**
+
+  ![Vista previa del sitio](docs/sabio.gif)
 
 ## Características principales
 
@@ -67,6 +70,17 @@ npm run serve:ssr:test-simple # Sirve la compilación SSR después de npm run bu
 
 > **Pruebas:** el script `npm test` está definido, pero el builder configurado como `@angular/build:unit-test` debe estar disponible para ejecutarlo.
 
+## Despliegue en Firebase Hosting
+
+Con Firebase CLI instalado, inicia sesión y, desde la raíz del proyecto, ejecuta:
+
+```bash
+ng build
+firebase deploy
+```
+
+La configuración de Hosting publica los archivos generados en `dist/test-simple/browser`.
+
 ## Rutas de la aplicación
 
 | Ruta | Contenido |
@@ -108,5 +122,4 @@ La aplicación presenta la experiencia web y se integra con servicios backend a 
 
 ## Autor y contacto
 
-- **GitHub:** [Agregar enlace a tu perfil](#)
-- **LinkedIn:** [Agregar enlace a tu perfil](#)
+- **GitHub:** [Nato89](https://github.com/Nato89)
